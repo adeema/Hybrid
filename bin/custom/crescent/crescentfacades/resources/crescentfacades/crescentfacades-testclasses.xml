@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="utf-8"?><testclasses><crescentfacades><testclass>com.capgemini.crescent.facades.suggestion.DefaultSimpleSuggestionFacadeIntegrationTest</testclass><testclass>com.capgemini.crescent.facades.suggestion.impl.DefaultSimpleSuggestionFacadeTest</testclass></crescentfacades></testclasses>

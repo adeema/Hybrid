@@ -1,0 +1,34 @@
+# ImpEx for Importing Products into Merchandise  store
+  
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+  
+  
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$supercategories=supercategories(code, $catalogVersion)
+$baseProduct=baseProduct(code,$catalogVersion)
+$approved=approvalstatus(code)[default='approved']
+$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+  
+# Insert Products
+INSERT_UPDATE Product;code[unique=true];$supercategories;manufacturerName;manufacturerAID;unit(code);ean;variantType(code);$catalogVersion;$approved;$taxGroup
+ ;0001;110;FV & Co;Potato;pieces;
+ ;0002;110;FV & Co;Onion;pieces;
+ ;0003;110;FV & Co;Cauliflower;pieces;
+ ;0004;110;FV & Co;Capsicum-Green;pieces;
+ ;0005;120;FV & Co;Apples;pieces;
+ ;0006;120;FV & Co;Banana;pieces;
+ ;0007;120;FV & Co;Coconut;pieces;
+ ;0100;210;Cakes & Bakery;Dahi;pieces;
+ ;0101;210;Cakes & Bakery;Dairy;pieces;
+# ;0102;210;Cakes & Bakery;SHIRT-WHITE-M-L;pieces;
+# ;0110;210;Cakes & Bakery;SHIRT-WHITE-F-S;pieces;
+# ;0111;210;Cakes & Bakery;SHIRT-WHITE-F-M;pieces;
+# ;0112;210;Cakes & Bakery;SHIRT-WHITE-F-L;pieces;
+ ;0200;220;Cakes & Bakery;Brown Bread;pieces;
+ ;0201;220;Cakes & Bakery;Baked Bread;pieces;
+# ;0202;220;Cakes & Bakery;SWEAT-WHITE-M-L;pieces;
+# ;0210;220;Cakes & Bakery;SWEAT-WHITE-F-S;pieces;
+# ;0211;220;Cakes & Bakery;SWEAT-WHITE-F-M;pieces;
+# ;0212;220;Cakes & Bakery;SWEAT-WHITE-F-L;pieces;
+ 

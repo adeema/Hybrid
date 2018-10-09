@@ -1,0 +1,117 @@
+# ImpEx for Importing Prices into Merchandise Store  
+"#% impex.setLocale( Locale.GERMAN )"
+   
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+    
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+$prices=Europe1prices[translator=de.hybris.platform.europe1.jalo.impex.Europe1PricesTranslator]
+    
+# Set product approval status to Approved only for those products that have prices.
+$approved=approvalstatus(code)[default='approved']
+   
+UPDATE Product;code[unique=true];$prices;$approved;$catalogVersion;
+ ;0001;5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY
+ ;0002;2,50 GBP, 2,75 EUR, 3,74 USD, 382,66 JPY
+ ;0003;5,00 GBP, 5,50 EUR, 7,48 USD, 765,33 JPY
+ ;0004;10,00 GBP, 11,00 EUR, 14,96 USD, 1530,65 JPY
+ ;0005;8,00 GBP, 10,00 EUR, 13,6 USD, 1391,50 JPY
+ ;0006;18,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0007;12,00 GBP, 15,00 EUR, 20,40 USD, 2087,25 JPY
+ ;0100;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0101;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+# ;0102;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+# ;0110;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+# ;0111;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+# ;0112;20,00 GBP, 22,00 EUR, 29,92 USD, 3061,30 JPY
+ ;0200;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ ;0201;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+# ;0202;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+# ;0210;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+# ;0211;30,00 GBP, 33,00 EUR, 44,88 USD, 4591,95 JPY
+ 
+ 
+#$productCatalog=groceryProductCatalog
+#$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default='$productCatalog:Staged']
+#$taxGroup=Europe1PriceFactory_PTG(code)[default=jp-vat-full]
+#
+## Set product approval status to Approved only for those products that have prices.
+#$approved=approvalstatus(code)[default='approved']
+#
+#UPDATE Product;code[unique=true];$approved;$catalogVersion;$taxGroup
+#;0001
+#;0002
+#;0003
+#;0004
+#;0005
+#;0006
+#;0007
+#;0100
+#;0101
+#;0102
+#;0110
+#;0111
+#;0112
+#;0200
+#;0201
+#;0202
+#;0210
+#;0211
+#
+#INSERT_UPDATE PriceRow;productId[unique=true];unit(code[unique=true,default=pieces]);currency(isocode)[unique=true];price;minqtd;unitFactor;net
+#;0001;pieces;USD;179,93;1;1;false
+#;0001;pieces;JPY;15330;1;1;false
+#;0001;pieces;EUR;79,93;1;1;false
+#;0002;pieces;USD;179,93;1;1;false
+#;0002;pieces;JPY;15330;1;1;false
+#;0002;pieces;EUR;79,93;1;1;false
+#;0003;pieces;USD;179,93;1;1;false
+#;0003;pieces;JPY;15330;1;1;false
+#;0003;pieces;EUR;79,93;1;1;false
+#;0004;pieces;USD;179,93;1;1;false
+#;0004;pieces;JPY;15330;1;1;false
+#;0004;pieces;EUR;79,93;1;1;false
+#;0005;pieces;USD;179,93;1;1;false
+#;0005;pieces;JPY;15330;1;1;false
+#;0005;pieces;EUR;79,93;1;1;false
+#;0006;pieces;USD;179,93;1;1;false
+#;0006;pieces;JPY;15330;1;1;false
+#;0006;pieces;EUR;79,93;1;1;false
+#;0007;pieces;USD;179,93;1;1;false
+#;0007;pieces;JPY;15330;1;1;false
+#;0007;pieces;EUR;79,93;1;1;false
+#;0100;pieces;USD;179,93;1;1;false
+#;0100;pieces;JPY;15330;1;1;false
+#;0100;pieces;EUR;79,93;1;1;false
+#;0101;pieces;USD;179,93;1;1;false
+#;0101;pieces;JPY;15330;1;1;false
+#;0101;pieces;EUR;79,93;1;1;false
+#;0102;pieces;USD;179,93;1;1;false
+#;0102;pieces;JPY;15330;1;1;false
+#;0102;pieces;EUR;79,93;1;1;false
+#;0110;pieces;USD;179,93;1;1;false
+#;0110;pieces;JPY;15330;1;1;false
+#;0110;pieces;EUR;79,93;1;1;false
+#;0111;pieces;USD;179,93;1;1;false
+#;0111;pieces;JPY;15330;1;1;false
+#;0111;pieces;EUR;79,93;1;1;false
+#;0112;pieces;USD;179,93;1;1;false
+#;0112;pieces;JPY;15330;1;1;false
+#;0112;pieces;EUR;79,93;1;1;false
+#;0200;pieces;USD;179,93;1;1;false
+#;0200;pieces;JPY;15330;1;1;false
+#;0200;pieces;EUR;79,93;1;1;false
+#;0201;pieces;USD;179,93;1;1;false
+#;0201;pieces;JPY;15330;1;1;false
+#;0201;pieces;EUR;79,93;1;1;false
+#;0202;pieces;USD;179,93;1;1;false
+#;0202;pieces;JPY;15330;1;1;false
+#;0202;pieces;EUR;79,93;1;1;false
+#;0210;pieces;USD;179,93;1;1;false
+#;0210;pieces;JPY;15330;1;1;false
+#;0210;pieces;EUR;79,93;1;1;false
+#;0211;pieces;USD;179,93;1;1;false
+#;0211;pieces;JPY;15330;1;1;false
+#;0211;pieces;EUR;79,93;1;1;false
+#
+#

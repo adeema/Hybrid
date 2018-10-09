@@ -1,0 +1,10 @@
+#
+# Import the Grocery Content Catalog
+#
+
+# Language
+$lang=de
+
+# Create Content Catalog
+UPDATE ContentCatalog;id[unique=true];name[lang=$lang]
+ ;groceryContentCatalog;"Elektronikkatalog"

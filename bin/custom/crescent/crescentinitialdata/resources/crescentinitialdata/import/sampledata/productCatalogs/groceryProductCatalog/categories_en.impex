@@ -1,0 +1,17 @@
+# ImpEx for Importing Categories into Merchandise Store
+   
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+   
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+   
+$lang=en
+   
+UPDATE Category;$catalogVersion;code[unique=true];name[lang=$lang];description[lang=$lang]
+;;1;Grocery Catalogue;
+;;100;Fruits & Vegetables;
+;;200;Bakery, Cakes & Dairy;
+;;110;Vegetables;
+;;120;Fruits;
+;;210;Dairy;
+;;220;Breads & Buns;

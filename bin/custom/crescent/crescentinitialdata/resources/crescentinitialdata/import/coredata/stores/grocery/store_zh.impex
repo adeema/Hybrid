@@ -1,0 +1,10 @@
+#
+# Import the Grocery BaseStore
+#
+
+# Language
+$lang=zh
+
+# Create Base Store
+UPDATE BaseStore;uid[unique=true];name[lang=$lang]
+ ;grocery;"电子产品店铺"

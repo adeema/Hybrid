@@ -1,0 +1,120 @@
+# ImpEx for Importing Product Media into Merchandise store
+  
+# Macros / Replacement Parameter definitions
+$productCatalog=groceryProductCatalog
+$catalogVersion=catalogversion(catalog(id[default=$productCatalog]),version[default='Staged'])[unique=true,default=$productCatalog:Staged]
+$thumbnail=thumbnail(code, $catalogVersion)
+$picture=picture(code, $catalogVersion)
+$thumbnails=thumbnails(code, $catalogVersion)
+$detail=detail(code, $catalogVersion)
+$normal=normal(code, $catalogVersion)
+$others=others(code, $catalogVersion)
+$data_sheet=data_sheet(code, $catalogVersion)
+$medias=medias(code, $catalogVersion)
+$galleryImages=galleryImages(qualifier, $catalogVersion)
+$siteResource=jar:com.capgemini.crescent.initialdata.constants.CrescentInitialDataConstants&/crescentinitialdata/import/sampledata/productCatalogs/$productCatalog
+
+#INSERT_UPDATE MediaFolder;qualifier[unique=true];path[unique=true]
+#;images;images
+
+# Create Media
+INSERT_UPDATE Media;mediaFormat(qualifier);code[unique=true];@media[translator=de.hybris.platform.impex.jalo.media.MediaDataTranslator];mime[default='image/jpg'];$catalogVersion;folder(qualifier)
+;1200Wx1200H;/1200Wx1200H/bananas.jpg;$siteResource/images/1200Wx1200H/bananas.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/apples.jpg;$siteResource/images/1200Wx1200H/apples.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/capsicum.jpg;$siteResource/images/1200Wx1200H/capsicum.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/cauliflower.jpg;$siteResource/images/1200Wx1200H/cauliflower.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/potato.jpg;$siteResource/images/1200Wx1200H/potato.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/onion.jpg;$siteResource/images/1200Wx1200H/onion.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/coconut.jpg;$siteResource/images/1200Wx1200H/coconut.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/bakebread.jpg;$siteResource/images/1200Wx1200H/bakebread.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/brownbread.jpg;$siteResource/images/1200Wx1200H/brownbread.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/nestledairy.jpg;$siteResource/images/1200Wx1200H/nestledairy.jpg;;;images
+;1200Wx1200H;/1200Wx1200H/nestledahi.jpg;$siteResource/images/1200Wx1200H/nestledahi.jpg;;;images
+ 
+;515Wx515H;/515Wx515H/bananas.jpg;$siteResource/images/515Wx515H/bananas.jpg;;;images
+;515Wx515H;/515Wx515H/apples.jpg;$siteResource/images/515Wx515H/apples.jpg;;;images
+;515Wx515H;/515Wx515H/capsicum.jpg;$siteResource/images/515Wx515H/capsicum.jpg;;;images
+;515Wx515H;/515Wx515H/cauliflower.jpg;$siteResource/images/515Wx515H/cauliflower.jpg;;;images
+;515Wx515H;/515Wx515H/potato.jpg;$siteResource/images/515Wx515H/potato.jpg;;;images
+;515Wx515H;/515Wx515H/onion.jpg;$siteResource/images/515Wx515H/onion.jpg;;;images
+;515Wx515H;/515Wx515H/coconut.jpg;$siteResource/images/515Wx515H/coconut.jpg;;;images
+;515Wx515H;/515Wx515H/bakebread.jpg;$siteResource/images/515Wx515H/bakebread.jpg;;;images
+;515Wx515H;/515Wx515H/brownbread.jpg;$siteResource/images/515Wx515H/brownbread.jpg;;;images
+;515Wx515H;/515Wx515H/nestledairy.jpg;$siteResource/images/515Wx515H/nestledairy.jpg;;;images
+;515Wx515H;/515Wx515H/nestledahi.jpg;$siteResource/images/515Wx515H/nestledahi.jpg;;;images
+ 
+;300Wx300H;/300Wx300H/bananas.jpg;$siteResource/images/300Wx300H/bananas.jpg;;;images
+;300Wx300H;/300Wx300H/apples.jpg;$siteResource/images/300Wx300H/apples.jpg;;;images
+;300Wx300H;/300Wx300H/capsicum.jpg;$siteResource/images/300Wx300H/capsicum.jpg;;;images
+;300Wx300H;/300Wx300H/cauliflower.jpg;$siteResource/images/300Wx300H/cauliflower.jpg;;;images
+;300Wx300H;/300Wx300H/potato.jpg;$siteResource/images/300Wx300H/potato.jpg;;;images
+;300Wx300H;/300Wx300H/onion.jpg;$siteResource/images/300Wx300H/onion.jpg;;;images
+;300Wx300H;/300Wx300H/coconut.jpg;$siteResource/images/300Wx300H/coconut.jpg;;;images
+;300Wx300H;/300Wx300H/bakebread.jpg;$siteResource/images/300Wx300H/bakebread.jpg;;;images
+;300Wx300H;/300Wx300H/brownbread.jpg;$siteResource/images/300Wx300H/brownbread.jpg;;;images
+;300Wx300H;/300Wx300H/nestledairy.jpg;$siteResource/images/300Wx300H/nestledairy.jpg;;;images
+;300Wx300H;/300Wx300H/nestledahi.jpg;$siteResource/images/300Wx300H/nestledahi.jpg;;;images
+ 
+;96Wx96H;/96Wx96H/bananas.jpg;$siteResource/images/96Wx96H/bananas.jpg;;;images
+;96Wx96H;/96Wx96H/apples.jpg;$siteResource/images/96Wx96H/apples.jpg;;;images
+;96Wx96H;/96Wx96H/capsicum.jpg;$siteResource/images/96Wx96H/capsicum.jpg;;;images
+;96Wx96H;/96Wx96H/cauliflower.jpg;$siteResource/images/96Wx96H/cauliflower.jpg;;;images
+;96Wx96H;/96Wx96H/potato.jpg;$siteResource/images/96Wx96H/potato.jpg;;;images
+;96Wx96H;/96Wx96H/onion.jpg;$siteResource/images/96Wx96H/onion.jpg;;;images
+;96Wx96H;/96Wx96H/coconut.jpg;$siteResource/images/96Wx96H/coconut.jpg;;;images
+;96Wx96H;/96Wx96H/bakebread.jpg;$siteResource/images/96Wx96H/bakebread.jpg;;;images
+;96Wx96H;/96Wx96H/brownbread.jpg;$siteResource/images/96Wx96H/brownbread.jpg;;;images
+;96Wx96H;/96Wx96H/nestledairy.jpg;$siteResource/images/96Wx96H/nestledairy.jpg;;;images
+;96Wx96H;/96Wx96H/nestledahi.jpg;$siteResource/images/96Wx96H/nestledahi.jpg;;;images
+ 
+;65Wx65H;/65Wx65H/bananas.jpg;$siteResource/images/65Wx65H/bananas.jpg;;;images
+;65Wx65H;/65Wx65H/apples.jpg;$siteResource/images/65Wx65H/apples.jpg;;;images
+;65Wx65H;/65Wx65H/capsicum.jpg;$siteResource/images/65Wx65H/capsicum.jpg;;;images
+;65Wx65H;/65Wx65H/cauliflower.jpg;$siteResource/images/65Wx65H/cauliflower.jpg;;;images
+;65Wx65H;/65Wx65H/potato.jpg;$siteResource/images/65Wx65H/potato.jpg;;;images
+;65Wx65H;/65Wx65H/onion.jpg;$siteResource/images/65Wx65H/onion.jpg;;;images
+;65Wx65H;/65Wx65H/coconut.jpg;$siteResource/images/65Wx65H/coconut.jpg;;;images
+;65Wx65H;/65Wx65H/bakebread.jpg;$siteResource/images/65Wx65H/bakebread.jpg;;;images
+;65Wx65H;/65Wx65H/brownbread.jpg;$siteResource/images/65Wx65H/brownbread.jpg;;;images
+;65Wx65H;/65Wx65H/nestledairy.jpg;$siteResource/images/65Wx65H/nestledairy.jpg;;;images
+;65Wx65H;/65Wx65H/nestledahi.jpg;$siteResource/images/65Wx65H/nestledahi.jpg;;;images
+ 
+;30Wx30H;/30Wx30H/bananas.jpg;$siteResource/images/30Wx30H/bananas.jpg;;;images
+;30Wx30H;/30Wx30H/apples.jpg;$siteResource/images/30Wx30H/apples.jpg;;;images
+;30Wx30H;/30Wx30H/capsicum.jpg;$siteResource/images/30Wx30H/capsicum.jpg;;;images
+;30Wx30H;/30Wx30H/cauliflower.jpg;$siteResource/images/30Wx30H/cauliflower.jpg;;;images
+;30Wx30H;/30Wx30H/potato.jpg;$siteResource/images/30Wx30H/potato.jpg;;;images
+;30Wx30H;/30Wx30H/onion.jpg;$siteResource/images/30Wx30H/onion.jpg;;;images
+;30Wx30H;/30Wx30H/coconut.jpg;$siteResource/images/30Wx30H/coconut.jpg;;;images
+;30Wx30H;/30Wx30H/bakebread.jpg;$siteResource/images/30Wx30H/bakebread.jpg;;;images
+;30Wx30H;/30Wx30H/brownbread.jpg;$siteResource/images/30Wx30H/brownbread.jpg;;;images
+;30Wx30H;/30Wx30H/nestledairy.jpg;$siteResource/images/30Wx30H/nestledairy.jpg;;;images
+;30Wx30H;/30Wx30H/nestledahi.jpg;$siteResource/images/30Wx30H/nestledahi.jpg;;;images
+ 
+# Create Media Containers
+INSERT_UPDATE MediaContainer;qualifier[unique=true];$medias;$catalogVersion
+;potato;/1200Wx1200H/potato.jpg,/515Wx515H/potato.jpg,/300Wx300H/potato.jpg,/96Wx96H/potato.jpg,/65Wx65H/potato.jpg,/30Wx30H/potato.jpg
+;onion;/1200Wx1200H/onion.jpg,/515Wx515H/onion.jpg,/300Wx300H/onion.jpg,/96Wx96H/onion.jpg,/65Wx65H/onion.jpg,/30Wx30H/onion.jpg
+;cauliflower;/1200Wx1200H/cauliflower.jpg,/515Wx515H/cauliflower.jpg,/300Wx300H/cauliflower.jpg,/96Wx96H/cauliflower.jpg,/65Wx65H/cauliflower.jpg,/30Wx30H/cauliflower.jpg
+;capsicum;/1200Wx1200H/capsicum.jpg,/515Wx515H/capsicum.jpg,/300Wx300H/capsicum.jpg,/96Wx96H/capsicum.jpg,/65Wx65H/capsicum.jpg,/30Wx30H/capsicum.jpg
+;apples;/1200Wx1200H/apples.jpg,/515Wx515H/apples.jpg,/300Wx300H/apples.jpg,/96Wx96H/apples.jpg,/65Wx65H/apples.jpg,/30Wx30H/apples.jpg
+;bananas;/1200Wx1200H/bananas.jpg,/515Wx515H/bananas.jpg,/300Wx300H/bananas.jpg,/96Wx96H/bananas.jpg,/65Wx65H/bananas.jpg,/30Wx30H/bananas.jpg
+;coconut;/1200Wx1200H/coconut.jpg,/515Wx515H/coconut.jpg,/300Wx300H/coconut.jpg,/96Wx96H/coconut.jpg,/65Wx65H/coconut.jpg,/30Wx30H/coconut.jpg
+;nestledahi;/1200Wx1200H/nestledahi.jpg,/515Wx515H/nestledahi.jpg,/300Wx300H/nestledahi.jpg,/96Wx96H/nestledahi.jpg,/65Wx65H/nestledahi.jpg,/30Wx30H/nestledahi.jpg
+;nestledairy;/1200Wx1200H/nestledairy.jpg,/515Wx515H/nestledairy.jpg,/300Wx300H/nestledairy.jpg,/96Wx96H/nestledairy.jpg,/65Wx65H/nestledairy.jpg,/30Wx30H/nestledairy.jpg
+;brownbread;/1200Wx1200H/brownbread.jpg,/515Wx515H/brownbread.jpg,/300Wx300H/brownbread.jpg,/96Wx96H/brownbread.jpg,/65Wx65H/brownbread.jpg,/30Wx30H/brownbread.jpg
+;bakebread;/1200Wx1200H/bakebread.jpg,/515Wx515H/bakebread.jpg,/300Wx300H/bakebread.jpg,/96Wx96H/bakebread.jpg,/65Wx65H/bakebread.jpg,/30Wx30H/bakebread.jpg
+  
+# Update Products with Media and Media Containers
+UPDATE Product;code[unique=true];$picture;$thumbnail;$detail;$others;$normal;$thumbnails;$galleryImages;$catalogVersion
+;0001;/300Wx300H/potato.jpg;/96Wx96H/potato.jpg;;/515Wx515H/potato.jpg,/65Wx65H/potato.jpg,/30Wx30H/potato.jpg;/300Wx300H/potato.jpg;/96Wx96H/potato.jpg;potato
+;0002;/300Wx300H/onion.jpg;/96Wx96H/onion.jpg;;/515Wx515H/onion.jpg,/65Wx65H/onion.jpg,/30Wx30H/onion.jpg;/300Wx300H/onion.jpg;/96Wx96H/onion.jpg;onion
+;0003;/300Wx300H/cauliflower.jpg;/96Wx96H/cauliflower.jpg;;/515Wx515H/cauliflower.jpg,/65Wx65H/cauliflower.jpg,/30Wx30H/cauliflower.jpg;/300Wx300H/cauliflower.jpg;/96Wx96H/cauliflower.jpg;cauliflower
+;0004;/300Wx300H/capsicum.jpg;/96Wx96H/capsicum.jpg;;/515Wx515H/capsicum.jpg,/65Wx65H/capsicum.jpg,/30Wx30H/capsicum.jpg;/300Wx300H/capsicum.jpg;/96Wx96H/capsicum.jpg;capsicum
+;0005;/300Wx300H/apples.jpg;/96Wx96H/apples.jpg;;/515Wx515H/apples.jpg,/65Wx65H/apples.jpg,/30Wx30H/apples.jpg;/300Wx300H/apples.jpg;/96Wx96H/apples.jpg;apples
+;0006;/300Wx300H/bananas.jpg;/96Wx96H/bananas.jpg;;/515Wx515H/bananas.jpg,/65Wx65H/bananas.jpg,/30Wx30H/bananas.jpg;/300Wx300H/bananas.jpg;/96Wx96H/bananas.jpg;bananas
+;0007;/300Wx300H/coconut.jpg;/96Wx96H/coconut.jpg;;/515Wx515H/coconut.jpg,/65Wx65H/coconut.jpg,/30Wx30H/coconut.jpg;/300Wx300H/coconut.jpg;/96Wx96H/coconut.jpg;coconut
+;0100;/300Wx300H/nestledahi.jpg;/96Wx96H/nestledahi.jpg;;/515Wx515H/nestledahi.jpg,/65Wx65H/nestledahi.jpg,/30Wx30H/nestledahi.jpg;/300Wx300H/nestledahi.jpg;/96Wx96H/nestledahi.jpg;nestledahi
+;0101;/300Wx300H/nestledairy.jpg;/96Wx96H/nestledairy.jpg;;/515Wx515H/nestledairy.jpg,/65Wx65H/nestledairy.jpg,/30Wx30H/nestledairy.jpg;/300Wx300H/nestledairy.jpg;/96Wx96H/nestledairy.jpg;nestledairy
+;0200;/300Wx300H/brownbread.jpg;/96Wx96H/brownbread.jpg;;/515Wx515H/brownbread.jpg,/65Wx65H/brownbread.jpg,/30Wx30H/brownbread.jpg;/300Wx300H/brownbread.jpg;/96Wx96H/brownbread.jpg;brownbread
+;0201;/300Wx300H/bakebread.jpg;/96Wx96H/bakebread.jpg;;/515Wx515H/bakebread.jpg,/65Wx65H/bakebread.jpg,/30Wx30H/bakebread.jpg;/300Wx300H/bakebread.jpg;/96Wx96H/bakebread.jpg;bakebread
